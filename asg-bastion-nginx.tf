@@ -42,7 +42,7 @@ resource "aws_launch_template" "bastion-launch-template" {
   key_name = var.keypair
 
   placement {
-    availability_zone = "random_shuffle.az_list.result"
+    availability_zone = "$(random_shuffle.az_list.result)"
   }
 
   lifecycle {
@@ -87,7 +87,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "ACS-bastion"
+    value               = "mtrone-bastion"
     propagate_at_launch = true
   }
 
@@ -108,7 +108,7 @@ resource "aws_launch_template" "nginx-launch-template" {
   key_name = var.keypair
 
   placement {
-    availability_zone = "random_shuffle.az_list.result"
+    availability_zone = "$(random_shuffle.az_list.result)"
   }
 
   lifecycle {
@@ -152,7 +152,7 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "ACS-nginx"
+    value               = "mtrone-nginx"
     propagate_at_launch = true
   }
 
