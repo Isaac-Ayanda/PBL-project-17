@@ -1,5 +1,5 @@
 # creating sns topic for all the auto scaling groups
-resource "aws_sns_topic" "david-sns" {
+resource "aws_sns_topic" "mtrone-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
