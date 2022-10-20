@@ -13,7 +13,7 @@ resource "aws_launch_template" "wordpress-launch-template" {
 
 
   placement {
-    availability_zone = "$(random_shuffle.az_list.result)"
+    availability_zone = "random_shuffle.az_list.result"
   }
 
   lifecycle {
@@ -85,7 +85,7 @@ resource "aws_launch_template" "tooling-launch-template" {
 
 
   placement {
-    availability_zone = "$(random_shuffle.az_list.result)"
+    availability_zone = "random_shuffle.az_list.result"
   }
 
   lifecycle {
