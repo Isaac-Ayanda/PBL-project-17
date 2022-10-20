@@ -13,7 +13,7 @@ resource "aws_launch_template" "wordpress-launch-template" {
 
 
   placement {
-    availability_zone = "random_shuffle.az_list.result"
+    availability_zone = "$(random_shuffle.az_list.result)"
   }
 
   lifecycle {
@@ -57,7 +57,7 @@ resource "aws_autoscaling_group" "wordpress-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "ACS-wordpress"
+    value               = "mtrone-wordpress"
     propagate_at_launch = true
   }
 }
@@ -85,7 +85,7 @@ resource "aws_launch_template" "tooling-launch-template" {
 
 
   placement {
-    availability_zone = "random_shuffle.az_list.result"
+    availability_zone = "$(random_shuffle.az_list.result)"
   }
 
   lifecycle {
@@ -132,12 +132,12 @@ resource "aws_autoscaling_group" "tooling-asg" {
 
   tag {
     key                 = "Name"
-    value               = "ACS-tooling"
+    value               = "mtrone-tooling"
     propagate_at_launch = true
   }
 }
 
-# attaching autoscaling group of  tooling application to internal loadbalancer
+# attaching autoscaling group of tooling application to internal loadbalancer
 resource "aws_autoscaling_attachment" "asg_attachment_tooling" {
   autoscaling_group_name = aws_autoscaling_group.tooling-asg.id
   alb_target_group_arn   = aws_lb_target_group.tooling-tgt.arn
