@@ -46,6 +46,10 @@ variable "tags" {
   default     = {}
 }
 
+variable "environment" {
+  type        = string
+  description = "Environment"
+}
 
 variable "ami" {
   type        = string
