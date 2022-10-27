@@ -7,6 +7,7 @@ resource "aws_acm_certificate" "mtrone" {
 }
 
 # calling the hosted zone
+# you must have added mtrone to Route 53
 data "aws_route53_zone" "mtrone" {
   name         = "mtrone.ml"
   private_zone = false
