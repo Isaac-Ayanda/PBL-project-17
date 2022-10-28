@@ -24,12 +24,12 @@ master-password = "devopspblproject"
 
 master-username = "isaac"
 
-# Ensure to this change to your accounbt number
-account_no = "998967442543"
+# Ensure to this change to your account number
+account_no = "372759426427"
 
 tags = {
   Enviroment      = "production" 
-  Owner-Email     = "isaacayanda@gmail.com"
+  Owner-Email     = "izikayanda@gmail.com"
   Managed-By      = "Terraform"
   Billing-Account = "1234567890"
 }
