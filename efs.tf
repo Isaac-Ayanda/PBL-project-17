@@ -29,7 +29,7 @@ resource "aws_efs_file_system" "mtrone-efs" {
   encrypted  = true
   kms_key_id = aws_kms_key.mtrone-kms.arn
 
- tags = merge(
+  tags = merge(
     var.tags,
     {
       Name = "mtrone-efs"

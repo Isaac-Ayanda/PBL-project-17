@@ -3,7 +3,7 @@ resource "aws_db_subnet_group" "mtrone-rds" {
   name       = "mtrone-rds"
   subnet_ids = [aws_subnet.private[2].id, aws_subnet.private[3].id]
 
-   tags = merge(
+  tags = merge(
     var.tags,
     {
       Name = "mtrone-rds"

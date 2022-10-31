@@ -14,7 +14,7 @@ resource "aws_lb" "ext-alb" {
     aws_subnet.public[1].id
   ]
 
-   tags = merge(
+  tags = merge(
     var.tags,
     {
       Name = format("%s-ext-alb", var.name)
@@ -74,7 +74,7 @@ resource "aws_lb" "ialb" {
     aws_subnet.private[1].id
   ]
 
- tags = merge(
+  tags = merge(
     var.tags,
     {
       Name = format("%s-int-alb", var.name)

@@ -28,7 +28,7 @@ master-username = "isaac"
 account_no = "372759426427"
 
 tags = {
-  Enviroment      = "production" 
+  Enviroment      = "production"
   Owner-Email     = "izikayanda@gmail.com"
   Managed-By      = "Terraform"
   Billing-Account = "1234567890"
