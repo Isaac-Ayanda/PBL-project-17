@@ -94,7 +94,7 @@ resource "aws_security_group" "nginx-sg" {
    tags = merge(
     var.tags,
     {
-      Name = "nginx-sg"
+      Name = "Nginx-sg"
     },
   )
 }
@@ -204,7 +204,7 @@ resource "aws_security_group" "datalayer-sg" {
  tags = merge(
     var.tags,
     {
-      Name = "datalayer-sg"
+      Name = "Datalayer-sg"
     },
   )
 }

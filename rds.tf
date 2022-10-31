@@ -1,6 +1,6 @@
 # create DB subnet group from the private subnets
 resource "aws_db_subnet_group" "mtrone-rds" {
-  name       = "acs-rds"
+  name       = "mtrone-rds"
   subnet_ids = [aws_subnet.private[2].id, aws_subnet.private[3].id]
 
    tags = merge(

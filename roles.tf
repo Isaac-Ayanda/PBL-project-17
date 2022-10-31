@@ -1,7 +1,7 @@
 resource "aws_iam_role" "ec2_instance_role" {
   name = "ec2_instance_role"
   assume_role_policy = jsonencode({
-    Version = "2022-10-28"
+    Version = "2012-10-17"
     Statement = [
       {
         Action = "sts:AssumeRole"
@@ -48,6 +48,7 @@ resource "aws_iam_policy" "policy" {
   )
 }
 
+# attach the Policy to the IAM Role
 resource "aws_iam_role_policy_attachment" "test-attach" {
   role       = aws_iam_role.ec2_instance_role.name
   policy_arn = aws_iam_policy.policy.arn
